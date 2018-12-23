@@ -1,0 +1,97 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>filter</ion-title>
+      <ion-buttons end (click)="onClose()">
+        <button ion-button icon-end>
+          
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+      
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="logForm()">  
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Free water</ion-label>
+      <ion-checkbox [(ngModel)]="filter.freewater" name="freewater"></ion-checkbox>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>With cr</ion-label>
+      <ion-checkbox [(ngModel)]="filter.withcr" name="withcr"></ion-checkbox>
+    </ion-item>
+  
+  
+    <ion-item>
+      <ion-label>No curfew</ion-label>
+      <ion-checkbox [(ngModel)]="filter.nocurfew" name="nocurfew"></ion-checkbox>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Pets allowed</ion-label>
+      <ion-checkbox [(ngModel)]="filter.petsallowed" name="petsallowed"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Onsite parking</ion-label>
+      <ion-checkbox [(ngModel)]="filter.onsiteparking" name="onsiteparking"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Free electricity</ion-label>
+      <ion-checkbox [(ngModel)]="filter.freelectricity" name="freelectricity"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>In-unit laundry</ion-label>
+      <ion-checkbox [(ngModel)]="filter.in-unitlaundry" name="in-unitlaundry"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Aircon</ion-label>
+      <ion-checkbox [(ngModel)]="filter.aircon" name="aircon"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>with CCTV</ion-label>
+      <ion-checkbox [(ngModel)]="filter.cctv" name="cctv"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>with security team</ion-label>
+      <ion-checkbox [(ngModel)]="filter.security" name="security"></ion-checkbox>
+    </ion-item>
+  
+     
+  </ion-list>
+  
+<ion-list>
+
+  <ion-list-header>
+    Structure
+    <ion-badge item-end color="dark">php{{structure.lower}}</ion-badge>
+    <ion-badge item-end color="dark">php{{structure.upper}}</ion-badge>
+  </ion-list-header>
+  <ion-item>
+    <ion-range min="1000" max="30000" dualKnobs="true" pin="true" [(ngModel)]="structure" name="structure" (ionChange)="onChange($event)" color="dark">
+      <ion-label range-left>1000</ion-label>
+      <ion-label range-right>30000</ion-label>
+    </ion-range>
+  </ion-item>
+
+</ion-list>
+     <button ion-button class="btn" type="submit" block>Add Todo</button>
+    </form>
+
+  </ion-content>
+
+  

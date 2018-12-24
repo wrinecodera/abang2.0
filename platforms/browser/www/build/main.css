@@ -25709,7 +25709,21 @@ page-user1 #map_canvas {
 
 page-user1 ion-searchbar {
   width: 100%;
-  margin: 0 auto;
+  position: relative;
+  z-index: 11;
+  padding: 8px;
+}
+
+page-user1 .btn2 {
+  width: 35%;
+  position: absolute;
+}
+
+page-user1 .grid-overlay {
   position: absolute;
   z-index: 11;
+}
+
+page-user1 .grid {
+  padding: -5px;
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import{ModalController} from 'ionic-angular';
-
+import { AlertController } from 'ionic-angular';
 import {
   GoogleMaps,
   GoogleMap,
@@ -20,9 +20,31 @@ import {
 })
 export class User1Page {
   map: GoogleMap;
-  constructor(private modalCtrl:ModalController) {
+  constructor(private modalCtrl:ModalController,public alertCtrl: AlertController) {
   }
 
+  doConfirm() {
+    let alert = this.alertCtrl.create({
+      title: 'Use this lightsaber?',
+      message: 'Do you agree to use this lightsaber to do good across the intergalactic galaxy?',
+      buttons: [
+        {
+          text: 'Disagree',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Agree',
+          handler: () => {
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+
+    alert.present();
+  }
   
   onGoToFilter(){
     const modalPage= this.modalCtrl.create('FilterPage', {}, {
@@ -74,5 +96,6 @@ export class User1Page {
       alert('clicked');
     });
   
+    
 }
 }

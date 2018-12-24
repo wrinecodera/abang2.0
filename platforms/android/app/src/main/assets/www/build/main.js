@@ -76,7 +76,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\user01\Desktop\abang-master\src\pages\home\home.html"*/'\n<ion-header>\n\n  \n\n</ion-header>\n\n\n<ion-content padding class="bg">\n  \n     <ion-row>\n          <ion-col>\n          <img src="../../assets/imgs/House_Silhouette.svg" alt="ikwhdiwd">\n\n          </ion-col>\n\n     </ion-row>    \n        \n          <ion-grid class="margin-user"  >\n              \n              \n               \n               <ion-row  >\n                       \n              <ion-col col-12 >  \n                   <button   ion-button round outline class=\'btn\' (click)="onGoToUser1()">I\'m just browsing.</button>\n              </ion-col>\n      \n                        \n              </ion-row>\n\n              <ion-row >\n                         \n                <ion-col col-12> \n                     <button  ion-button round outline class=\'btn\'(click)="onGoToUsers2()">I\'m a bhouse owner.</button>\n                    \n                </ion-col>    \n                          \n               </ion-row>\n          \n              </ion-grid>\n     \n     \n      \n          \n  \n</ion-content>\n\n   \n  \n  \n\n\n'/*ion-inline-end:"C:\Users\user01\Desktop\abang-master\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\user01\Desktop\abang-master\src\pages\home\home.html"*/'\n<ion-header>\n\n  \n\n</ion-header>\n\n\n<ion-content padding class="bg">\n     \n     <ion-row>\n          <ion-col> </ion-col>\n          <ion-col col-6>\n          </ion-col>\n          <ion-col></ion-col>\n     </ion-row>    \n     <ion-row>\n          <ion-col> </ion-col>\n          <ion-col col-6>\n          <img src="../../assets/imgs/2000px-House.svg.png" alt="ikwhdiwd">\n\n          </ion-col>\n          <ion-col></ion-col>\n     </ion-row>    \n        \n\n\n          <ion-grid class="margin-user"  >\n              \n              \n               \n               <ion-row  >\n                       \n              <ion-col col-12 >  \n                   <button   ion-button round outline class=\'btn\' (click)="onGoToUser1()">I\'m just browsing.</button>\n              </ion-col>\n      \n                        \n              </ion-row>\n\n              <ion-row >\n                         \n                <ion-col col-12> \n                     <button  ion-button round outline class=\'btn\'(click)="onGoToUsers2()">I\'m a bhouse owner.</button>\n                    \n                </ion-col>    \n                          \n               </ion-row>\n          \n              </ion-grid>\n     \n     \n      \n          \n  \n</ion-content>\n\n   \n  \n  \n\n\n'/*ion-inline-end:"C:\Users\user01\Desktop\abang-master\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
     ], HomePage);
@@ -116,6 +116,8 @@ var User1Page = /** @class */ (function () {
             enterAnimation: 'modal-translate-up-enter',
             leaveAnimation: 'modal-translate-up-leave'
         });
+        modalPage.onDidDismiss(function (data) {
+        });
         modalPage.present();
     };
     User1Page.prototype.ionViewDidLoad = function () {
@@ -124,14 +126,14 @@ var User1Page = /** @class */ (function () {
     User1Page.prototype.loadMap = function () {
         // This code is necessary for browser
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["a" /* Environment */].setEnv({
-            'API_KEY_FOR_BROWSER_RELEASE': '(your api key for `http://`)',
-            'API_KEY_FOR_BROWSER_DEBUG': '(your api key for `http://`)'
+            'API_KEY_FOR_BROWSER_RELEASE': 'AIzaSyBv0UmuFOwhuIVMYK9X9RuaeqcgLJMC-k4',
+            'API_KEY_FOR_BROWSER_DEBUG': 'AIzaSyBv0UmuFOwhuIVMYK9X9RuaeqcgLJMC-k4'
         });
         var mapOptions = {
             camera: {
                 target: {
-                    lat: 43.0741904,
-                    lng: -89.3809802
+                    lat: 10.302870,
+                    lng: 123.892940
                 },
                 zoom: 18,
                 tilt: 30
@@ -143,8 +145,8 @@ var User1Page = /** @class */ (function () {
             icon: 'blue',
             animation: 'DROP',
             position: {
-                lat: 43.0741904,
-                lng: -89.3809802
+                lat: 10.302292,
+                lng: 123.893222
             }
         });
         marker.on(__WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["c" /* GoogleMapsEvent */].MARKER_CLICK).subscribe(function () {
@@ -153,7 +155,7 @@ var User1Page = /** @class */ (function () {
     };
     User1Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-user1',template:/*ion-inline-start:"C:\Users\user01\Desktop\abang-master\src\pages\user1\user1.html"*/'\n<ion-header>\n\n  <ion-navbar >\n    <ion-buttons end> <button ion-button   (click)="onGoToFilter()"clear>Filter</button></ion-buttons> \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n        \n  <ion-searchbar  class="search" > </ion-searchbar>\n\n  <div id="map-canvas"></div>\n    \n \n</ion-content>\n'/*ion-inline-end:"C:\Users\user01\Desktop\abang-master\src\pages\user1\user1.html"*/,
+            selector: 'page-user1',template:/*ion-inline-start:"C:\Users\user01\Desktop\abang-master\src\pages\user1\user1.html"*/'\n<ion-header>\n\n  <ion-navbar >\n    <ion-buttons end> <button ion-button   (click)="onGoToFilter()"clear>Filter</button></ion-buttons> \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n        <ion-grid>\n            \n              \n              <ion-row >\n                  <ion-col  >\n                      <ion-searchbar  class="search" > </ion-searchbar>\n                  </ion-col>\n                 \n                </ion-row>\n                \n                <ion-row class=" rwlocate" >  \n                    <button   ion-button block outline class=\'btn2\' > <ion-icon name="locate"></ion-icon> Locate me</button>\n                \n                </ion-row>\n                </ion-grid>\n    \n         \n    \n  \n \n</ion-content>\n'/*ion-inline-end:"C:\Users\user01\Desktop\abang-master\src\pages\user1\user1.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
     ], User1Page);

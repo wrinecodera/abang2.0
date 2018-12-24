@@ -10,12 +10,30 @@ page-user1 {
 }
 ion-searchbar {
     width: 100%;
-    margin: 0 auto;
-     position: absolute;
-     z-index:11;
+    position: relative;
+    z-index:11; 
+    padding:8px;
+
 }
+    
 
 
+.btn2
+{
+    width: 35%;
+   
+   position: absolute;
+ 
+
+}
+.grid-overlay{
+    position: absolute;
+    z-index:11;  
+  
+}
+.grid{
+    padding:-5px;
+}
 
 
 }

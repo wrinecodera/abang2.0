@@ -48,7 +48,7 @@ module.exports = webpackAsyncContext;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user1_user1__ = __webpack_require__(272);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__user2_user2__ = __webpack_require__(274);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -76,9 +76,9 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\user01\Desktop\abang-master\src\pages\home\home.html"*/'\n<ion-header>\n\n  \n\n</ion-header>\n\n\n<ion-content padding class="bg">\n  \n     <ion-row>\n          <ion-col>\n          <img src="../../assets/imgs/2000px-House.svg.png" alt="ikwhdiwd">\n\n          </ion-col>\n\n     </ion-row>    \n        \n          <ion-grid class="margin-user"  >\n              \n              \n               \n               <ion-row  >\n                       \n              <ion-col col-12 >  \n                   <button   ion-button round outline class=\'btn\' (click)="onGoToUser1()">I\'m just browsing.</button>\n              </ion-col>\n      \n                        \n              </ion-row>\n\n              <ion-row >\n                         \n                <ion-col col-12> \n                     <button  ion-button round outline class=\'btn\'(click)="onGoToUsers2()">I\'m a bhouse owner.</button>\n                    \n                </ion-col>    \n                          \n               </ion-row>\n          \n              </ion-grid>\n     \n     \n      \n          \n  \n</ion-content>\n\n   \n  \n  \n\n\n'/*ion-inline-end:"C:\Users\user01\Desktop\abang-master\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\user01\Desktop\abang-master\src\pages\home\home.html"*/'\n<ion-header>\n\n  \n\n</ion-header>\n\n\n<ion-content padding class="bg">\n     \n     <ion-row>\n          <ion-col> </ion-col>\n          <ion-col col-6>\n          </ion-col>\n          <ion-col></ion-col>\n     </ion-row>    \n     <ion-row>\n          <ion-col> </ion-col>\n          <ion-col col-6>\n          <img src="../../assets/imgs/2000px-House.svg.png" alt="ikwhdiwd">\n\n          </ion-col>\n          <ion-col></ion-col>\n     </ion-row>    \n        \n\n\n          <ion-grid class="margin-user"  >\n              \n              \n               \n               <ion-row  >\n                       \n              <ion-col col-12 >  \n                   <button   ion-button round outline class=\'btn\' (click)="onGoToUser1()">I\'m just browsing.</button>\n              </ion-col>\n      \n                        \n              </ion-row>\n\n              <ion-row >\n                         \n                <ion-col col-12> \n                     <button  ion-button round outline class=\'btn\'(click)="onGoToUsers2()">I\'m a bhouse owner.</button>\n                    \n                </ion-col>    \n                          \n               </ion-row>\n          \n              </ion-grid>\n     \n     \n      \n          \n  \n</ion-content>\n\n   \n  \n  \n\n\n'/*ion-inline-end:"C:\Users\user01\Desktop\abang-master\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]])
     ], HomePage);
     return HomePage;
 }());
@@ -93,7 +93,7 @@ var HomePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User1Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__ = __webpack_require__(273);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -107,10 +107,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var User1Page = /** @class */ (function () {
-    function User1Page(modalCtrl) {
+    function User1Page(modalCtrl, alertCtrl) {
         this.modalCtrl = modalCtrl;
+        this.alertCtrl = alertCtrl;
     }
+    User1Page.prototype.doConfirm = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Use this lightsaber?',
+            message: 'Do you agree to use this lightsaber to do good across the intergalactic galaxy?',
+            buttons: [
+                {
+                    text: 'Disagree',
+                    handler: function () {
+                        console.log('Disagree clicked');
+                    }
+                },
+                {
+                    text: 'Agree',
+                    handler: function () {
+                        console.log('Agree clicked');
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
     User1Page.prototype.onGoToFilter = function () {
         var modalPage = this.modalCtrl.create('FilterPage', {}, {
             enterAnimation: 'modal-translate-up-enter',
@@ -155,9 +178,9 @@ var User1Page = /** @class */ (function () {
     };
     User1Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-user1',template:/*ion-inline-start:"C:\Users\user01\Desktop\abang-master\src\pages\user1\user1.html"*/'\n<ion-header>\n\n  <ion-navbar >\n    <ion-buttons end> <button ion-button   (click)="onGoToFilter()"clear>Filter</button></ion-buttons> \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n        \n  <div>\n    <ion-searchbar  class="search" > </ion-searchbar>\n  </div>\n\n  <div id="map_canvas">\n\n  </div>\n    \n  \n \n</ion-content>\n'/*ion-inline-end:"C:\Users\user01\Desktop\abang-master\src\pages\user1\user1.html"*/,
+            selector: 'page-user1',template:/*ion-inline-start:"C:\Users\user01\Desktop\abang-master\src\pages\user1\user1.html"*/'\n<ion-header>\n\n  <ion-navbar >\n    <ion-buttons end> <button ion-button   (click)="onGoToFilter()"clear>Filter</button></ion-buttons> \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n        <ion-grid class="grid-overlay">\n            \n              \n              <ion-row >\n                 \n           \n                <ion-col >\n                      <ion-searchbar  \n                        class="search" >\n                      </ion-searchbar> \n                     <button   ion-button color="secondary" block \n                        class=\'btn2\'(click)="doConfirm()"> <ion-icon name="locate">\n                     </ion-icon> Locate me</button>\n                </ion-col>\n              </ion-row>\n       </ion-grid>\n       \n         \n           \n\n              <div id="map_canvas">\n              </div>\n  \n \n</ion-content>\n'/*ion-inline-end:"C:\Users\user01\Desktop\abang-master\src\pages\user1\user1.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], User1Page);
     return User1Page;
 }());
@@ -172,7 +195,7 @@ var User1Page = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User2Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -196,7 +219,7 @@ var User2Page = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-user2',template:/*ion-inline-start:"C:\Users\user01\Desktop\abang-master\src\pages\user2\user2.html"*/'\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>user2</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\user01\Desktop\abang-master\src\pages\user2\user2.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], User2Page);
     return User2Page;
 }());
@@ -226,7 +249,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(459);
@@ -276,13 +299,13 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/filter/filter.module#FilterPageModule', name: 'FilterPage', segment: 'filter', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
@@ -293,10 +316,10 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
                 __WEBPACK_IMPORTED_MODULE_11__ionic_native_google_maps__["b" /* GoogleMaps */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicErrorHandler */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicErrorHandler */] }
             ]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* Config */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* Config */]])
     ], AppModule);
     return AppModule;
 }());
@@ -311,7 +334,7 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(271);
@@ -340,7 +363,7 @@ var MyApp = /** @class */ (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\user01\Desktop\abang-master\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\user01\Desktop\abang-master\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());
@@ -354,7 +377,7 @@ var MyApp = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalTranslateEnterTransition; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(35);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -373,7 +396,7 @@ var ModalTranslateEnterTransition = /** @class */ (function (_super) {
     }
     ModalTranslateEnterTransition.prototype.init = function () {
         var ele = this.enteringView.pageRef().nativeElement;
-        var wrapper = new __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["a" /* Animation */](this.plt, ele.querySelector('.modal-wrapper'));
+        var wrapper = new __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["b" /* Animation */](this.plt, ele.querySelector('.modal-wrapper'));
         wrapper.beforeStyles({ 'transform': 'translateX(100%);', 'opacity': 1 });
         wrapper.fromTo('transform', 'translateX(100%)', 'translateX(0)');
         wrapper.fromTo('opacity', 1, 1);
@@ -384,7 +407,7 @@ var ModalTranslateEnterTransition = /** @class */ (function (_super) {
             .add(wrapper);
     };
     return ModalTranslateEnterTransition;
-}(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* PageTransition */]));
+}(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* PageTransition */]));
 
 //# sourceMappingURL=on-enter-translate.transition.js.map
 
@@ -395,7 +418,7 @@ var ModalTranslateEnterTransition = /** @class */ (function (_super) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalTranslateLeaveTransition; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(35);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -414,8 +437,8 @@ var ModalTranslateLeaveTransition = /** @class */ (function (_super) {
     }
     ModalTranslateLeaveTransition.prototype.init = function () {
         var ele = this.leavingView.pageRef().nativeElement;
-        var wrapper = new __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["a" /* Animation */](this.plt, ele.querySelector('.modal-wrapper'));
-        var contentWrapper = new __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["a" /* Animation */](this.plt, ele.querySelector('.wrapper'));
+        var wrapper = new __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["b" /* Animation */](this.plt, ele.querySelector('.modal-wrapper'));
+        var contentWrapper = new __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["b" /* Animation */](this.plt, ele.querySelector('.wrapper'));
         wrapper.beforeStyles({ 'transform': 'translateX(100%)', 'opacity': 1 });
         wrapper.fromTo('transform', 'translateX(0)', 'translateX(100%)');
         wrapper.fromTo('opacity', 1, 1);
@@ -428,7 +451,7 @@ var ModalTranslateLeaveTransition = /** @class */ (function (_super) {
             .add(wrapper);
     };
     return ModalTranslateLeaveTransition;
-}(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* PageTransition */]));
+}(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* PageTransition */]));
 
 //# sourceMappingURL=on-leave-translate.transition.js.map
 

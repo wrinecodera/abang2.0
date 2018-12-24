@@ -9,15 +9,28 @@
 
 
 <ion-content >
-        
-  <div>
-    <ion-searchbar  class="search" > </ion-searchbar>
-  </div>
+        <ion-grid class="grid-overlay">
+            
+              
+              <ion-row >
+                 
+           
+                <ion-col >
+                      <ion-searchbar  
+                        class="search" >
+                      </ion-searchbar> 
+                     <button   ion-button color="secondary" block 
+                        class='btn2'(click)="doConfirm()"> <ion-icon name="locate">
+                     </ion-icon> Locate me</button>
+                </ion-col>
+              </ion-row>
+       </ion-grid>
+       
+         
+           
 
-  <div id="map_canvas">
-
-  </div>
-    
+              <div id="map_canvas">
+              </div>
   
  
 </ion-content>

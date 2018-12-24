@@ -25675,7 +25675,7 @@ ion-navbar.toolbar {
 }
 
 page-filter .btn {
-  posiiton: fixed;
+  positon: fixed;
   overflow: hidden;
 }
 
@@ -25694,12 +25694,17 @@ page-home .grid {
   margin-right: auto;
 }
 
+.img {
+  width: 70%;
+  height: auto;
+}
+
 page-user1 #map_canvas {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  position: relevant;
-  z-index: 999;
+  position: relative;
+  z-index: 1;
 }
 
 page-user1 ion-searchbar {
@@ -25707,4 +25712,14 @@ page-user1 ion-searchbar {
   margin: 0 auto;
   position: absolute;
   z-index: 11;
+}
+
+page-user1 .btn2 {
+  width: 35%;
+  padding: 10px;
+}
+
+page-user1 .rwlocate {
+  margin: 0 auto;
+  position: absolute;
 }

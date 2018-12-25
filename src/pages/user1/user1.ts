@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import{ModalController} from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { Platform } from 'ionic-angular';
+
 import {
   GoogleMaps,
   GoogleMap,
@@ -9,7 +11,9 @@ import {
   CameraPosition,
   MarkerOptions,
   Marker,
-  Environment
+  Environment,
+  LocationService,
+  MyLocation
 } from '@ionic-native/google-maps';
 
 
@@ -20,8 +24,10 @@ import {
 })
 export class User1Page {
   map: GoogleMap;
-  constructor(private modalCtrl:ModalController,public alertCtrl: AlertController) {
-  }
+  constructor(private modalCtrl:ModalController,public alertCtrl: AlertController,private platform: Platform) {
+        this.platform.ready().then(()=> {
+          console.log('ready!!');
+    }); }
 
   doConfirm() {
     let alert = this.alertCtrl.create({
@@ -37,7 +43,7 @@ export class User1Page {
         {
           text: 'Agree',
           handler: () => {
-            console.log('Agree clicked');
+            console.log('agree clicked');
           }
         }
       ]
@@ -45,7 +51,19 @@ export class User1Page {
 
     alert.present();
   }
-  
+    loadmap2() {
+      LocationService.getMyLocation().then((myLocation: MyLocation) => {
+
+        let options: GoogleMapOptions = {
+          camera: {
+            target: myLocation.latLng
+          }
+        };
+        this.map = GoogleMaps.create('map_canvas', options);
+
+      });
+    }
+
   onGoToFilter(){
     const modalPage= this.modalCtrl.create('FilterPage', {}, {
       enterAnimation: 'modal-translate-up-enter',
@@ -59,6 +77,7 @@ export class User1Page {
   }
   ionViewDidLoad() {
     this.loadMap();
+    this.loadmap2();
   }
 
   loadMap() {

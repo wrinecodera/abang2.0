@@ -12,7 +12,7 @@ import { User2Page } from '../pages/user2/user2';
 import { ModalTranslateEnterTransition } from '../transitions/on-enter-translate.transition';
 import { ModalTranslateLeaveTransition } from '../transitions/on-leave-translate.transition';
 
-import {  GoogleMaps } from '@ionic-native/google-maps';
+import {  GoogleMaps, LocationService  } from '@ionic-native/google-maps';
 
 @NgModule({
   declarations: [
@@ -37,6 +37,8 @@ import {  GoogleMaps } from '@ionic-native/google-maps';
     StatusBar,
     SplashScreen,
      GoogleMaps,
+     LocationService,
+     
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
